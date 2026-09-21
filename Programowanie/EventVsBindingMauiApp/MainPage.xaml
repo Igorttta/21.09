@@ -11,7 +11,7 @@
                 MinimumTrackColor="Bisque"
                 ValueChanged="Slider_ValueChanged"
                 Value="20" />
-        <Label x:Name="rotationLabel"
+        <Label x:Name="rotationLabel" 
                Margin="40"
                BackgroundColor="Bisque"
                HorizontalOptions="Center"
@@ -21,8 +21,18 @@
         <Label Margin="40"
                BackgroundColor="Bisque"
                HorizontalOptions="Center"
+               FontSize="{Binding Source={x:Reference rotationSlider}, Path=Value}"
                Rotation="{Binding Source={x:Reference rotationSlider}, Path=Value}"
                Text="{Binding Source={x:Reference rotationSlider}, Path=Value}" />
+
+
+        <Label Margin="40"
+               BackgroundColor="Bisque"
+               BindingContext="{x:Reference rotationLabel }"
+               FontSize="{Binding Value}"
+               HorizontalOptions="Center"
+               Rotation="{Binding Value}"
+               Text="{Binding Value}" />
 
     </StackLayout>
 
